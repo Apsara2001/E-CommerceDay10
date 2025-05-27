@@ -22,7 +22,7 @@ import lk.ac.vau.fas.ict.service.DepartmentService;
 @RestController
 @RequestMapping("/dept")
 public class DepartmentController {
-	/*@Autowired
+	@Autowired
 	public DepartmentService service;
 	
 	@GetMapping
@@ -33,19 +33,11 @@ public class DepartmentController {
 	
 	@GetMapping("/{id}")
 	public ResponseEntity<Department> getDept(@PathVariable("id") int id){
-		if(service.getDept(id) == null) {
-		   return new ResponseEntity<Department>
-		       (service.getDept(id),HttpStatus.NOT_FOUND);
-		}
-		else
-		{
-			return new ResponseEntity<Department>
-			 (service.getDept(id),HttpStatus.OK);
+		return new ResponseEntity<Department>(service.getDept(id),HttpStatus.OK);
 		
-		}
 	}
-	*/
 	
+	/* 
 	@Autowired
 	public DepartmentRepo repo;
 	
@@ -89,5 +81,5 @@ public class DepartmentController {
 		repo.deleteById(id);
 		return "The Department Deleted";
 	}
-	
+	*/
 }
